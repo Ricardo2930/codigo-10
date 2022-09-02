@@ -49,3 +49,8 @@ git log
 git show ID del commit
 ```
 se coloca el git show + ID del commit
+
+* Para llevar de forma local a forma Remota (GitHub)
+```bash
+git push origin main
+```
