@@ -46,5 +46,6 @@ git log
 
 * Para ver el detalle de commit
 ```bash
-git show
+git show ID del commit
 ```
+se coloca el git show + ID del commit
