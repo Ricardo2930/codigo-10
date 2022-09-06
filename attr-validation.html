@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attr-Validation</title>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+   <legend>Datos para Matricula</legend>
+   
+    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+        <label for="">Nombres</label>
+        <input type="text" placeholder="Nombres" required> </div>
+    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+        <label for="">Apellidos</label>
+        <input type="text" placeholder="Apellidos" required> </div>
+    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+            <label for="">E-mail</label>
+             <input type="email" placeholder="E-mail"required> </div>
+    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+            <label for="">Edad</label>
+            <input type="number" min="18" max="50" placeholder="Edad"required> </div>
+    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+        <label for="">Contraseña</label>
+        <input type="password" minlength="6" maxlength="10" placeholder="Contraseña" required> </div>
+    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+        <label for="">Especialización</label>  
+        <select name="" id="">
+            <option value="">Elije tu Especialización</option>
+            <option value="1">Diplomado</option>
+            <option value="2">Maestría</option>
+            <option value="3">Bootcamp</option>
+            <option value="4">Certificación</option>
+            <option value="5">Workshop</option>
+        </select> </div>
+    <div style="border-radius: 5px; padding: 5px; margin: 10px">
+        <label for="">País</label>  
+        <select name="" id="">
+            <option value="">Elije tu País</option>
+            <option value="1">Perú</option>
+            <option value="2">Brasil</option>
+            <option value="3">Colombia</option>
+            <option value="4">Argentina</option>    
+            <option value="5">Uruguay</option>
+        </select> </div>
+    </fieldset>
+        <fieldset>
+            <legend>Comentarios</legend>
+            <textarea name="" id="" cols="35" rows="5"></textarea>
+        </fieldset>
+        <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+            <button>Enviar Información</button> </div>
+  </form>  
+</body>
+</html>
