@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attr-Validation</title>
+
+    <style>
+        input:focus {outline: none;}
+        input:valid:focus {border: 1px solid green}
+        input:invalid:focus {border: 1px solid red;}
+    </style>
+
 </head>
 <body>
   <form action="">
@@ -13,10 +20,10 @@
    
     <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
         <label for="">Nombres</label>
-        <input name="Name" type="text" placeholder="Nombres" required> </div>
+        <input name="Name" type="text" placeholder="Nombres" minlength="3" maxlength="10" required pattern="[A-Za-z]+"> </div>
     <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
         <label for="">Apellidos</label>
-        <input name="LastName" type="text" placeholder="Apellidos" required> </div>
+        <input name="LastName" type="text" placeholder="Apellidos" minlength="3" maxlength="10" required pattern="[A-Za-z]+"> </div>
     <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
         <label for="">E-mail</label>
         <input name="email" type="email" placeholder="E-mail"required> </div>
