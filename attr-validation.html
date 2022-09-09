@@ -18,48 +18,45 @@
     <fieldset>
    <legend>Datos para Matricula</legend>
    
-    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
-        <label for="">Nombres</label>
-        <input name="Name" type="text" placeholder="Nombres" minlength="3" maxlength="10" required pattern="[A-Za-z]+"> </div>
-    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
-        <label for="">Apellidos</label>
-        <input name="LastName" type="text" placeholder="Apellidos" minlength="3" maxlength="10" required pattern="[A-Za-z]+"> </div>
-    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
-        <label for="">E-mail</label>
-        <input name="email" type="email" placeholder="E-mail"required> </div>
-    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
-        <label for="">Edad</label>
-        <input name="Age" type="number" min="18" max="50" placeholder="Edad"required> </div>
-    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
-        <label for="">Contraseña</label>
-        <input name="password" type="password" minlength="6" maxlength="10" placeholder="Contraseña" required> </div>
-    <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
+    <p> <label for="">Nombres</label>
+        <input name="Name" type="text" placeholder="Nombres" minlength="3" maxlength="10" required pattern="[A-Za-z]+"> </p>
+    <p> <label for="">Apellidos</label>
+        <input name="LastName" type="text" placeholder="Apellidos" minlength="3" maxlength="10" required pattern="[A-Za-z]+"> </p>
+   <p> <label for="">E-mail</label>
+        <input name="email" type="email" placeholder="E-mail"required> </p>
+    <p> <label for="">Edad</label>
+        <input name="Age" type="number" min="18" max="50" placeholder="Edad"required> </p>
+    <p> <label for="">Contraseña</label>
+        <input name="password" type="password" minlength="6" maxlength="10" placeholder="Contraseña" required> </p>
+    <p> <label for="">Fecha de Nacimiento</label>
+        <input name="date" type="date" placeholder="Fecha de Nacimiento" required> </p>
+    <p>
         <label for="">Especialización</label>  
         <select name="specialization" id="">
-            <option value="">Elije tu Especialización</option>
+            <option value="" disabled selected>Elije tu Especialización</option>
             <option value="1">Diplomado</option>
             <option value="2">Maestría</option>
             <option value="3">Bootcamp</option>
             <option value="4">Certificación</option>
             <option value="5">Workshop</option>
-        </select> </div>
-    <div style="border-radius: 5px; padding: 5px; margin: 10px">
+        </select> </p>
+    <p>
         <label for="">País</label>  
         <select name="country" id="">
-            <option value="">Elije tu País</option>
+            <option value="" disabled selected>Elije tu País</option>
             <option value="1">Perú</option>
             <option value="2">Brasil</option>
             <option value="3">Colombia</option>
             <option value="4">Argentina</option>    
             <option value="5">Uruguay</option>
-        </select> </div>
+        </select> </p>
     </fieldset>
         <fieldset>
             <legend>Comentarios</legend>
             <textarea name="" id="" cols="35" rows="5"></textarea>
         </fieldset>
-        <div style="border-radius: 5px; padding: 5px; margin: 10px"> 
-            <button>Enviar Información</button> </div>
+        <p> 
+            <button type="submit">Enviar Información</button> </p>
   </form>  
 </body>
 </html>
