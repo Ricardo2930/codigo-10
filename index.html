@@ -4,15 +4,20 @@
         <title>
             Apple IOS
         </title>
+        <link rel="stylesheet" href="./css/style.css">
     </head>
-
+        <style>
+            #div_temas{
+                display: none;
+            }
+        </style>
     <body>
-        <div style="width: 1080px; margin: 10px auto;">
+        <div style="width: 1290px; margin: 10px auto;">
         <header></header>
-        <h1 style="text-align: center;">Apple.com</h1>
+        <h1 style="text-align: center">Apple.com</h1>
         <p style="text-align: center;">Productos Top</p>
         <main></main>
-            <div>
+            <div id="div_temas">
                <h4>Temas</h4>
                <ul>
                     <li>
@@ -26,31 +31,118 @@
         <table>
                 <tr>
                     <td>
-                        <div style="border: 2px solid #ccc; border-radius: 10px; padding: 10px; margin: 20px">
+                        <div class="product_cell celular">
                             <h2>Iphone 13</h2>
+                            <h3 class="price">729</h3>
                             <img width="200px" src="https://images.unsplash.com/photo-1634618776233-2e951832a5f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aXBob25lJTIwMTN8ZW58MHx8MHx8&w=1000&q=80" alt="Foto del Iphone 13 de Apple">
                         </div>
                     </td>
                     <td>
-                        <div style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;margin: 20px">
+                        <div class="product_cell laptop">
                             <h2>Macbook Pro</h2>
+                            <h3>$949</h3>
                             <img width="200px" src="https://images.unsplash.com/photo-1625766763788-95dcce9bf5ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWlyZSUyMG1hY2Jvb2t8ZW58MHx8MHx8&w=1000&q=80" alt="Foto de la Macbook Pro">
                         </div>
                     </td>
                     <td>
-                        <div style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;margin: 20px">
+                        <div class="product_cell audifonos">
                             <h2>Airpods Pro</h2>
+                            <h3>$249</h3>
                         <img width="230px" src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWlycG9kc3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
                         </div>
                     </td>
                     <td>
-                        <div style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;margin: 20px">
+                        <div class="product_cell tablet">
                             <h2>Ipad Air</h2>
+                            <h3>$399</h3>
                             <img width="240px"src="https://images.unsplash.com/photo-1604399852419-f67ee7d5f2ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aXBhZCUyMGFpcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
                         </div>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <div class="product_cell celular">
+                            <h2>Iphone 14 Pro</h2>
+                            <h3>$899</h3>
+                            <img width="215px" src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2022/09/iphone-14-pro-14-pro-max.jpg?fit=1200%2C619&quality=60&strip=all&ssl=1" alt="Foto del Iphone 13 de Apple">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product_cell laptop">
+                            <h2>Macbook Air</h2>
+                            <h3>$999</h3>
+                            <img width="200px" src="https://i.pcmag.com/imagery/reviews/05CbcW9cP4o0rqbCnVB2OFZ-1..1584707541.jpg">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product_cell audifonos">
+                            <h2>Airpods Max</h2>
+                            <h3>$299</h3>
+                        <img width="220px" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-green-202011_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1604615274000" alt="">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product_cell tablet">
+                            <h2>Ipad Pro Max</h2>
+                            <h3>$599</h3>
+                            <img width="200px"src="https://www.techadvisor.com/wp-content/uploads/2022/06/apple_ipad_pro_13_inch_2021_review26.jpg?quality=50&strip=all&w=1024" alt="">
+                        </div>
+                    </td>
+                </tr>
         </table>
+
+        <section>
+            <h2>Contacto</h2>
+            <div class="div_form">
+                <form action="">
+                    <input type="text" name="" id="">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+
+
+
+         
+        <h2>Jerarquias de CSS</h2>
+        <table class="big_table">
+            <thead>
+                <th>Método</th>
+                <th>Simbolo</th>
+                <th>Peso</th>
+            </thead>
+           <tr>
+            <td>Sector de Elemento</td>
+            <td>Elemento</td>
+            <td>1</td>
+           </tr>
+
+           <tr>
+            <td>Sector de Clase</td>
+            <td>.Class_Name</td>
+            <td>2</td>
+           </tr>
+
+           <tr>
+            <td>Sector de Atributo</td>
+            <td>selector [atributo]</td>
+            <td>3</td>
+           </tr>
+
+           <tr>
+            <td>Sector de ID</td>
+            <td>#ID</td>
+            <td>4</td>
+           </tr>
+
+           <tr>
+            <td>HTML Style</td>
+            <td>style=""</td>
+            <td>5</td>
+           </tr>
+        </table>
+
 
         <footer></footer>
         <p style="text-align: center;">Hecho con cariño por codigo</p>

@@ -1,0 +1,90 @@
+/* Selectores */
+/* Selector de Elemento Primera Jerarquia*/
+h1{color: green; background-color: beige; text-align: center;}
+
+/* Selector de Clase Segunda Jerarquia*/
+.titulo 
+{color: red; font-size: 30px; background-color: aqua;}
+.big_table 
+{font-size: 30px; border: 1px solid #ccc;}
+.big_table th,td 
+{padding: 20px;}
+    /* Selector de ID Tercera Jerarquia*/
+#titulo_huawei 
+{color: yellow; font-size: 30px; background-color: aqua;}
+
+
+
+/* CSS DE INDEX.HTML */
+.product_cell {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;}
+
+/* :hover solo se activa al pasar el mouse */
+.product_cell:hover {border: 4px dashed red; box-shadow: 20px 10px 10px black; cursor: grab;}
+/* La imagen se ponga opaca al pasar el cursor */
+.product_cell:hover > img {opacity: 50%; border: 4px solid black;}
+
+.celular h2 {color: red;}
+.celular > h2::before {content: "📱 "}
+.celular h3 {color: brown;}
+
+.laptop h2{color: blue;}
+.laptop > h2::before {content: "💻 ";}
+.laptop h3{color: cadetblue;}
+
+.audifonos h2 {color: green;}
+.audifonos h3 {color: aqua;}
+
+.tablet h2 {color: silver;}
+.tablet h3 {color: violet;}
+
+/* css para formulario contacto */
+.div_form {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.div_form > form > input {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 70%;
+    font-size: 20px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.div_form > form > input:focus {
+    border: 2px solid blue;
+}
+
+.div_form > form > button {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 28%;
+    outline: none;
+}
+.div_form > form > button:hover {
+    background-color: #666;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.div_form > form > button:focus {
+    border: 2px solid red;
+}
+
+/* Pseudo-elementos */
+.price::before {
+    content: "$ ";
+    font-size: 12px;
+}
+.price::after {
+    content: ".00";
+    font-size: 12px;
+}
+
