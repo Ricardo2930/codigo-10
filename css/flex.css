@@ -1,0 +1,40 @@
+
+/* El * hace referencia a todo */
+*{
+    /* Este comando hace que el borde este dentro del container */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+}
+/* No es recomendable usar Flex en el Body, sino en ID o Clase */
+.padre{
+    /* Inicia colocando el display:flex */
+    display: flex;
+    
+    height: 100vh; 
+/* Flex-wrap esto va a respetar el ancho de la pantalla, y cuando ocupe mas de lo dado, lo manda a la siguiente fila  */
+    flex-wrap: wrap;
+/* justify-content. Permite alinear elementos del lado HORIZONTAL */
+/* flex star a la izquierda */
+/* center al medio */
+/*  flex end al final */
+/* space-betwen alinea de lado a lado(espacio entre elementos) */
+/* space-around se parede al betwen pero da un espacio en los margenes al inicio y al final*/
+/* space-evenly parece al around, pero los espacios entre elementos son iguales */
+    justify-content: space-between;
+/* align-items es la propiedad que alinea los elementos del lado VERTICAL y comparte todas las propiedades del justify-content */
+    align-items: center ;
+}
+
+.hijo{
+    width: 25% ;
+    height: 300px;
+    border: solid 1px green;
+    background-color: white;
+}
