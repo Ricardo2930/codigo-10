@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://www.apple.com/la/iphone-14-pro/images/overview/router/tile_ios_16__b9bmysz4cu9y_large.jpg);
+    background-repeat: space;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;    
+    }
+    h1 {
+        font-size: 70px;
+        color: #06282b;
+        font-family: "Arial Black", Gadget, sans-serif;
+        text-shadow: 0px 0px 0 rgb(250, 188, 2), 1px 1px 0 rgb(245, 183, 0),
+          2px 2px 0 rgb(240, 178, 0), 3px 3px 0 rgb(235, 173, 0),
+          4px 4px 0 rgb(230, 168, 0), 5px 5px 0 rgb(225, 163, 0),
+          6px 6px 0 rgb(220, 158, 0), 7px 7px 0 rgb(215, 153, 0),
+          8px 8px 0 rgb(210, 148, 0), 9px 9px 0 rgb(205, 143, 0),
+          10px 10px 0 rgb(200, 138, 0), 11px 11px 10px rgba(0, 0, 0, 0.6),
+          11px 11px 1px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.2);
+          animation-duration: 6s;
+          animation-name: screen-saver;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;        
+      }
+
+      @keyframes screen-saver {
+        from {
+            margin-left: 100%;
+        }
+
+        top{
+            margin-right: 100%;
+        }
+        /* Para usar porcentajes de FOTOGRAMAS*/
+        10% { margin-top: 500px;}
+        30% { margin-top: -500px;}
+        50% { margin-top: 500px;}
+        70% { margin-top: -500px;}
+        90% { margin-top: 500px;}
+        100% { margin-top: -500px;}
+      }
+
+
+/* Animemos al p */
+p {
+/* Partes de una animación */
+/* ?tiempo 4s=4 segundos ...*/
+/* El tiempo de animación puede ser en segundos y mili segundos   */
+animation-duration: 4s;
+/* nombre de la animación */
+animation-name: primera-animacion;
+/* Permite poner el numero de veces que queramos que se de la animacion*/
+/* Ejemplo, animation-iteration-count: 4 (se repite 4 veces) */
+/* Para que se repita infinito, animation-iteration-count: infinite */
+animation-iteration-count: infinite; 
+
+animation-direction: alternate;
+margin: 10%;
+}
+/* Nota: Tenemos que enlazar nuestra animación con nuestro "keyframes" y esto se da por el nombre */
+@keyframes primera-animacion {
+        /* Lo que esta dentro de nuestro KEYFRAMES se llaman FOTOGRAMAS */
+
+        /* El inicio de la animacion*/
+        from {
+            margin-left: 100%;
+            /* margin-top: 40%; */
+            background-color: blue;
+    
+        }
+
+        /* Este es el final de la animacion */
+        to {
+            margin-right: 10%;
+            color: red;
+            font-size: 50px;
+            background-color: aqua;
+        }
+}
