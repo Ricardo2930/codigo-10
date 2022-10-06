@@ -1,0 +1,10 @@
+
+.container {
+    font-size: 40px;
+    color: blue;
+}
+
+.big {
+    font-size: 80px !important;
+    color: red;
+}
