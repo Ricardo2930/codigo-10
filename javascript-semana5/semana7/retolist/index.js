@@ -1,11 +1,13 @@
+// traer datos desde html
 const inputTask = document.querySelector(".input__task");
 const btnCreate = document.querySelector(".btn__create");
 const listTask = document.querySelector(".container__list__task");
 
-//vamos a crear un arreglo vacio
+//vamos a crear un arreglo vacio para guardar objetos del tipo tarea
 let arrayTasks = [];
 
 // !!Nota:Cuando una funcion no tiene nombre se llama funcion anonima
+// Creamos un tarea con un constructor en task.js por la palabra New
 btnCreate.onclick = function () {
   const taskText = inputTask.value;
 
@@ -21,7 +23,17 @@ btnCreate.onclick = function () {
   listTask.innerHTML += task.render();
 
   inputTask.value = "";
+  // focus hace que el cursor luego de colocar un dato vuelve al input
+  inputTask.focus();
 };
+
+// Aqui al dar click en enter se agrega la tarea ingresada en el input
+inputTask.addEventListener ("keyup", (Event) => {
+    if (Event.key === "Enter") {
+      btnCreate.click();
+    }
+}
+);
 
 function destroy(id) {
   // como podemos eliminar un elemento de un array
