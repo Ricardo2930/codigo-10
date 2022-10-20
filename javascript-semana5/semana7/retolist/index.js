@@ -17,7 +17,9 @@ btnCreate.onclick = function () {
     return;
   }
 
+  // el app.use se usa para poder tener la información de express.json
   const task = new Task(arrayTasks.length + 1, taskText, new Date(), 1);
+ 
   arrayTasks.push(task);
 
   listTask.innerHTML += task.render();
