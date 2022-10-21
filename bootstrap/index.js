@@ -3,7 +3,7 @@ const urlApi = "http://localhost:4000/jugadores-balon-oro";
 
 async function renderPlayers() {
   try {
-    const response = await fetch (urlApi);  
+    const response = await fetch(urlApi);  
     const data = await response.json();
     console.log (data);
 

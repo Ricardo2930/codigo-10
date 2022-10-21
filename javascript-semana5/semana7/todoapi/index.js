@@ -1,6 +1,8 @@
-import express, { json } from "express";
+import express from "express";
+import cors from "cors";
  
 const app = express();
+app.use(cors());
 // el app.use se usa para poder tener la información de express.json
 app.use(express.json());
 
