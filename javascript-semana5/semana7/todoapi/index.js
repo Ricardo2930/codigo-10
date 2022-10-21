@@ -23,12 +23,13 @@ const tasks = [];
  });
 
  //  Método Post: Se usa para enviarle datos al servidor
- app.post ("/puerta", (req, res) => {
+ app.post ("/task", (req, res) => {
         const task = req.body;
         tasks.push(task);
         // Solo he recepcionado para luego responder al cliente
-        res.json({
+        res.status(201).json({
             message: "Ok",
+            task,
         });
  });
 
