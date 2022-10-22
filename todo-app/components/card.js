@@ -2,15 +2,18 @@ class Card extends HTMLElement {
 	constructor() {
 		super();
 		this.class = "card p-3";
-		this.classname = "";
 	}
 
 	static get observedAttributes() {
-		return ["class", "classname"];
+		return ["class", "classname", "shadow"];
 	}
 
 	attributeChangedCallback(prop, oldvalue, newvalue) {
 		this[prop] = newvalue;
+		if (prop == "shadow") {
+			this.classList.remove("shadow");
+			if (newvalue == "true") this.classList.add("shadow");
+		}
 	}
 
 	// Cuando este elemento sea llamado a Renderizarse:
