@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 
-import {useState} from "react";
+import { useState } from "react";
 
 import './App.css';
 
@@ -19,14 +19,30 @@ import twitter from "./assets/icons/twitter.png";
 /* Comando para crear REACT --- npx create-react-app + (nombre del proyecto) --- crea un proyecto para hacer react desde cero, descarga paqutes de internet necesarias para poder empezar en react*/
 /* ejecuto un proyeco --- npm start ... actuva mi servidor local en mi navegador abre el puerto 3000... en app.js es un componente*/
 function App() {
-// En react para almacenar un valor en una variable usamos un HOOK llamado useState
-// useState es una funcion de react la cual nos permite poder manejar el estado de una variable
+  const [inputText, setInputText] = useState("");
 
-  function saludar () {
-    console.log ("Hola Mundo");
+  const [user, setUser] = useState ({
+    name:"",
+    created_at:"",
+  })
+
+
+  function handleInputChange (event) {
+    setInputText (event.target.value);
   }
 
-  // header es un componente y lo llevamos a App.js como etiqueta 
+  async function searchUser () {
+    try {
+      const response = await fetch (`https://api.github.com/users/${inputText}`);
+      const data = await response.json();
+      setUser(data);
+    }
+    catch (error) {
+      console.log("Error",error);
+    }
+  }
+
+   
   return (
     <div className="container">
       
@@ -42,13 +58,15 @@ function App() {
         <div className="busqueda">
           <img width="15px" src={search1} alt="" />
           <input
+            value={inputText}
+            onChange={handleInputChange}
             className="input"
             type="text"
             placeholder="Search GitHub username..."
           />
         </div>
         <div>
-          <button className="search">Search</button>
+          <button className="search" onClick={searchUser}>Search</button>
         </div>
       </div>
 
@@ -57,50 +75,50 @@ function App() {
         <div className="foto">
           <img
             width="100"
-            src={img}
+            src={user?.avatar_url}
             alt=""
           />
         </div>
 
         <div className="description-container">
           <div className="user-date-container">
-            <h4>The Octocat</h4>
-            <p>Joined 25 Jan 2011</p>
+            <h4>{user.name}</h4>
+            <p>{user.created_at}</p>
           </div>
           <div className="user-bio-container">
-            <p>@octocat</p>
-            <p>this profile has no bio</p>
+            <p>@{user?.login}</p>
+            <p>{user?.bio}</p>
           </div>
           <div className="card-information">
             <div>
               <h6>Repos</h6>
-              <h4>8</h4>
+              <h4>{user?.public_repos}</h4>
             </div>
             <div className="div">
               <h6>Followers</h6>
-              <h4>3938</h4>
+              <h4>{user?.followers}</h4>
             </div>
             <div>
               <h6>Following</h6>
-              <h4>9</h4>
+              <h4>{user?.following}</h4>
             </div>
           </div>
 
           <div className="info-container">
             <div>
               <p>
-                <img width="15" src={pin} alt="" /> San Franciso
+                <img width="15" src={pin} alt="" /> {user?.location}
               </p>
               <p>
-                <img width="15" src={twitter} alt="" /> Not Avible
+                <img width="15" src={twitter} alt="" /> {user?.twitter_username}
               </p>
             </div>
             <div>
               <p>
                 <img width="15" src={link} alt="" />
-                https://github.blog
+                {user?.blog}
               </p>
-              <p><img width="15" src={hotel} alt="" /> @github</p>
+              <p><img width="15" src={hotel} alt="" /> {user?.company}</p>
             </div>
           </div>
         </div>
