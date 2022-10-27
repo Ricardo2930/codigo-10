@@ -1,71 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reto 3</title>
+import logo from './logo.svg';
+import './App.css';
+import Header from "./components/header";
+/* Un COMPONENTE es un cloque de vista el cual combina html y js. En react siempre veremos una funcion que regrese html*/
+/* Comando para crear REACT --- npx create-react-app + (nombre del proyecto) --- crea un proyecto para hacer react desde cero, descarga paqutes de internet necesarias para poder empezar en react*/
+/* ejecuto un proyeco --- npm start ... actuva mi servidor local en mi navegador abre el puerto 3000... en app.js es un componente*/
+function App() {
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  function saludar () {
+    console.log ("Hola Mundo");
+  }
 
-    <link rel="stylesheet" href="./github.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- Primera seccion titulo - bottom -->
-      <div class="titulo">
-        <h4 class="title">devfinder</h4>
-        <button class="btn">
+  // header es un componente y lo llevamos a App.js como etiqueta 
+  return (
+    <div className="container">
+      
+      <div className="titulo">
+        <h4 className="title">devfinder</h4>
+        <button className="btn">
           LIGHT <img width="15px" src="./image/sun.png" alt="" />
         </button>
       </div>
 
-      <!-- Buscador -->
-      <div class="buscador">
-        <div class="busqueda">
+      
+      <div className="buscador">
+        <div className="busqueda">
           <img width="15px" src="./image/search_1.png" alt="" />
           <input
-            class="input"
+            className="input"
             type="text"
             placeholder="Search GitHub username..."
           />
         </div>
         <div>
-          <button class="search">Search</button>
+          <button className="search">Search</button>
         </div>
       </div>
 
-      <!-- Seccion que muestra la informacion -->
-      <div class="information-container">
-        <div class="foto">
+      
+      <div className="information-container">
+        <div className="foto">
           <img
-            style="border-radius: 70%"
             width="100"
             src="./image/IMG_20180202_070622.jpg"
             alt=""
           />
         </div>
 
-        <div class="description-container">
-          <div class="user-date-container">
+        <div className="description-container">
+          <div className="user-date-container">
             <h4>The Octocat</h4>
             <p>Joined 25 Jan 2011</p>
           </div>
-          <div class="user-bio-container">
+          <div className="user-bio-container">
             <p>@octocat</p>
             <p>this profile has no bio</p>
           </div>
-          <div class="card-information">
+          <div className="card-information">
             <div>
               <h6>Repos</h6>
               <h4>8</h4>
             </div>
-            <div class="div">
+            <div className="div">
               <h6>Followers</h6>
               <h4>3938</h4>
             </div>
@@ -75,7 +70,7 @@
             </div>
           </div>
 
-          <div class="info-container">
+          <div className="info-container">
             <div>
               <p>
                 <img width="15" src="./image/pin.png" alt="" /> San Franciso
@@ -95,5 +90,7 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+  );
+}
+
+export default App;
