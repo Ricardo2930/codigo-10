@@ -6,7 +6,7 @@ function App() {
 
   async function getTasks() {
     try {
-      const url = "https://6363105c66f75177ea3c9310.mockapi.io/tareas";
+      const url = "https://6363106137f2167d6f716e78.mockapi.io/tareas";
       const response = await fetch(url);
       const data = await response.json();
       setTaskList(data);
