@@ -26,6 +26,7 @@ export const post = async (body) => {
   }
 };
 
+// id: Tarea
 export const update = async (id,body) => {
     try {
       const response = await fetch(`${url}/${id}`, {
@@ -34,6 +35,22 @@ export const update = async (id,body) => {
           "Content-type": "application/json",
         },
         body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Para la eliminar un registro unicamente necesito el id
+  export const destroy = async (id) => {
+    try {
+      const response = await fetch(`${url}/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
       });
       const data = await response.json();
       return data;
