@@ -1,5 +1,16 @@
 const url = "https://6363106137f2167d6f716e78.mockapi.io/tareas";
 
+export const getProfile = async () => {
+  try {
+    const response = await fetch("https://api.github.com/users/ricardo2930");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 export const get = async () => {
   try {
     const response = await fetch(url);
