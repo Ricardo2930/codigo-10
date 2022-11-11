@@ -15,11 +15,12 @@ export const AuthProvider = (props) => {
 
   function login(email, password) {
     // aca vamos a comparar con un usuario fake
-    if (email !== "linder@gmail.com" || password !== "123456") return false;
+    if (email !== "ricardo@gmail.com" || password !== "123456") return false;
 
     const user = { email, password };
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);
+    return true;
   }
 
   function logout() {
