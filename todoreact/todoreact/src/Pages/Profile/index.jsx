@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { get, getProfile } from "../../services";
+import { getProfile } from "../../services";
 
 
 
