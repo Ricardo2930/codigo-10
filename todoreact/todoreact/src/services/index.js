@@ -82,7 +82,6 @@ export const getUsers = async () => {
 		console.log(error);
 	}
 };
-
 // id: Tarea
 export const update = async (id, body) => {
 	try {

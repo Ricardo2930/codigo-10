@@ -1,6 +1,6 @@
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./index.css";
 
@@ -12,7 +12,6 @@ const Login = () => {
     password: "",
   });
 
-  
   const handleInputChange = (e) => {
     setUser({
       ...user,
@@ -30,7 +29,7 @@ const Login = () => {
       });
       return;
     }
-    // Guardamos en localStorage
+    //* Entonces si ambos campos estan llenos vamos a guardarlos en localStorage
     const inicio = login(user.email, user.password);
 
     if (!inicio) {
@@ -40,7 +39,6 @@ const Login = () => {
         text: "Usuario o password erroneos",
       });
     }
-  
   };
 
   if (isAuth()) {
@@ -86,6 +84,12 @@ const Login = () => {
               >
                 Ingresar
               </button>
+              <Link
+                className="btn btn-outline-secondary mt-4"
+                to="/signup"
+              >
+                Registro
+              </Link>
             </div>
           </div>
         </div>

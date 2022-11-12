@@ -1,4 +1,8 @@
 import { createContext, useState } from "react";
+import { getUsers } from "../services";
+import { UserModel} from "../models/UserModel";
+
+
 
 export const AuthContext = createContext();
 
@@ -9,19 +13,44 @@ export const AuthProvider = (props) => {
   // y este children viaja por props
   const { children } = props;
 
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) ?? {}
-  );
+  const userDB = JSON.parse(localStorage.getItem("user")) || null;
+	let userModel = null;
+	if (userDB) {
+		userModel = new UserModel(
+			userDB.name,
+			userDB.lastName,
+			userDB.email,
+			userDB.pass,
+			userDB.imageProfile,
+			userDB.createdAt,
+			userDB.id
+		);
+	}
 
-  function login(email, password) {
-    // aca vamos a comparar con un usuario fake
-    if (email !== "ricardo@gmail.com" || password !== "123456") return false;
+	const [user, setUser] = useState(userModel ?? {});
 
-    const user = { email, password };
-    localStorage.setItem("user", JSON.stringify(user));
-    setUser(user);
-    return true;
-  }
+	async function login(email, password) {
+		// Traemos a TODOS los usuarios de mockapi:
+		const usersDB = await getUsers();
+		// Buscamos dentro de usersDB, el usuario con el email y password:
+		let user = null;
+		user = usersDB.find((userDB) => {
+			if (userDB.email === email && userDB.pass === password)
+				return new UserModel(
+					userDB.name,
+					userDB.lastName,
+					userDB.email,
+					userDB.pass,
+					userDB.imageProfile,
+					userDB.createdAt,
+					userDB.id
+				);
+		});
+		if (!user) return false;
+		localStorage.setItem("user", JSON.stringify(user));
+		setUser(user);
+		return true;
+	}
 
   function logout() {
     localStorage.clear();

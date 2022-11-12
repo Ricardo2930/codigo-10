@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { TaskForm, TaskCard } from "../../components";
 import { get, post, update } from "../../services";
 import { TaskModel } from "../../models/TaskModel";
 
+import { AuthContext } from "../../context/AuthContext";
+
 function Home() {
+	const { user } = useContext(AuthContext);
 	const [taskList, setTaskList] = useState([]);
 
 	async function getTasks() {
@@ -15,21 +18,27 @@ function Home() {
 				task.name,
 				task.createdAt,
 				task.doneAt,
-				task.deletedAt
+				task.deletedAt,
+				task.userId
 			);
 		});
-		setTaskList(tasksModels);
+		const myUserTasks = tasksModels.filter((task) => {
+			if (task.userId === user.id) return task;
+		});
+		setTaskList(myUserTasks);
 	}
 
 	async function addTask(text) {
-		const newTask = new TaskModel(null, text);
+		const newTask = new TaskModel(null, text, null, null, null, user.id);
 		await post(newTask);
 		await getTasks();
 	}
 
 	async function updateTask(id, type) {
 		const body =
-			type == "done" ? { doneAt: new Date() } : { deletedAt: new Date() };
+			type === "done"
+				? { doneAt: new Date() }
+				: { deletedAt: new Date() };
 		await update(id, body);
 		await getTasks();
 	}
@@ -64,7 +73,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
