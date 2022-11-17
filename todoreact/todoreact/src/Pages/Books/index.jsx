@@ -8,18 +8,23 @@ import {
   TextField,
   Button,
 } from "@mui/material";
+import { BookItem } from "../../components";
+import { getBooks } from "../../services";
 
 const Books = () => {
   const [search, setSearch] = useState("");
 
+  const [books, setBooks] = useState([]);
+
   const handleInputChange = (e) => setSearch(e.target.value);
 
-  const handleSubmit = () => {
-    console.log(search);
+  const handleSubmit = async () => {
+    const books = await getBooks(search);
+    setBooks(books.items);
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="lg">
       <Box mt={3}>
         <Card>
           <CardContent>
@@ -35,6 +40,7 @@ const Books = () => {
               </Grid>
               <Grid item xs={12} md={3}>
                 <Button
+                  fullWidth
                   onClick={handleSubmit}
                   variant="contained"
                   color="warning"
@@ -45,6 +51,16 @@ const Books = () => {
             </Grid>
           </CardContent>
         </Card>
+      </Box>
+      <Box my={3}>
+        <Grid container spacing={3}>
+          {books.length > 0 &&
+            books.map((book) => (
+              <Grid item md={3} xs={12}>
+                <BookItem book={book} />
+              </Grid>
+            ))}
+        </Grid>
       </Box>
     </Container>
   );

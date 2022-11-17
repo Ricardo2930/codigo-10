@@ -1,5 +1,20 @@
 const url = "https://6363106137f2167d6f716e78.mockapi.io/tareas";
 const urlUsers = "https://6363106137f2167d6f716e78.mockapi.io/users";
+const urlBooks = "https://www.googleapis.com/books/v1/volumes?q=";
+
+export const getBooks = async (search) => {
+	try {
+	  const response = await fetch(
+		`${urlBooks}${search}&maxResults=20`
+	  );
+	  const data = await response.json();
+	  return data;
+	} catch (error) {
+	  console.log("error", error);
+	}
+  };
+
+
 
 // GET : Listar
 // POST: Crear
