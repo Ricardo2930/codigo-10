@@ -10,7 +10,7 @@ export const BookProvider = (props) => {
   );
 
   function addItem(book) {
-    const newBooks = [...cartBooks, ...book];
+    const newBooks = [...cartBooks, book];
     setCartBooks(newBooks);
     localStorage.setItem("books", JSON.stringify(newBooks));
   }
@@ -22,7 +22,7 @@ export const BookProvider = (props) => {
         addItem,
       }}
     >
-      {{ children }}
+      { children }
     </BookContext.Provider>
   );
 };

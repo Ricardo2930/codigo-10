@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { BookContext } from "../../context/BookContext";
+
 import {
     Box,
     Button,
@@ -9,6 +12,7 @@ import {
   
   const BookItem = (props) => {
     const { book } = props;
+    const { addItem } = useContext(BookContext);
   
     return (
       <Paper
@@ -34,7 +38,7 @@ import {
             {book.volumeInfo?.description?.substring(0, 40)}...
           </Typography>
           <Box mt={2}>
-            <Button fullWidth color="success">
+            <Button onClick={() => addItem(book)} fullWidth color="success">  
               Agregar
             </Button>
           </Box>
